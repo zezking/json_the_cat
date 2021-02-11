@@ -6,8 +6,7 @@ const fetchBreedDescription = function (breedName, callback) {
   let link = breedSearch + breedName;
 
   request(link, function (error, response, body) {
-    console.log(body);
-    if (error || body.length === 0) {
+    if (error || body.length === 2) {
       return callback(error, null);
     } else {
       let data = JSON.parse(body);
